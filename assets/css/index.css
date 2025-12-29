@@ -1,0 +1,284 @@
+
+
+/* ===========================  HERO SECTION  =========================== */
+
+
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+/* Overlay mờ */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  color: white;
+}
+
+.tagline {
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.hero-title {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.hero-desc {
+  font-size: 17px;
+  margin-bottom: 25px;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+
+}
+
+.btn-book {
+  background: #e07844;
+  padding: 12px 25px;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.btn-view {
+  padding: 12px 25px;
+  border: 2px solid white;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Info section */
+.hero-info {
+  margin-top: 40px;
+  position: relative;
+  z-index: 3;
+  color: white;
+}
+
+.hero-info i {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+/* Tablet: căn giữa nhưng KHÔNG xuống dòng */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .hero-info .row {
+    justify-content: space-around;
+  }
+}
+
+/* Mobile: xếp dọc */
+@media (max-width: 767px) {
+  .hero-info .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+/* Scroll hint */
+.scroll-hint {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+  text-align: center;
+  color: white;
+  opacity: 0.9;
+}
+
+.scroll-hint i {
+  font-size: 20px;
+  display: block;
+  margin-top: 6px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .scroll-hint {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+/* ==========================================Intro Section Title========================================= */
+
+/* ============================= FEATURE GRID FLEXBOX ============================= */
+.intro-title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+}
+
+.feature-grid {
+    margin-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;           /* Cho phép wrap đúng */
+    justify-content: center;   /* Giữa hàng */
+    gap: 40px;                 /* Khoảng cách giữa các item */
+}
+
+/* Mỗi item flexible và không phình quá lớn */
+.feature-item {
+    flex: 1 1 300px;           /* Min-width = 300px → Laptop luôn 3 cột */
+    max-width: 360px;          /* Giới hạn để ảnh không quá to */
+    text-align: left;
+    
+}
+
+/* Ảnh giữ tỉ lệ đẹp */
+.feature-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin-bottom: 16px;
+}
+
+/* Text */
+.feature-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #355E3B;
+    margin-bottom: 8px;
+}
+
+.feature-desc {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Mobile (column) */
+@media (max-width: 768px) {
+    .feature-item {
+        flex: 1 1 100%;
+        max-width: 500px;
+        text-align: center;
+        margin: auto;
+    }
+}
+
+
+/* ===========================  REVIEW SLIDER FIX  =========================== */
+
+.review-section {
+  padding: 60px 0;
+  background: #fff; /* Hoặc màu nền bạn muốn */
+  text-align: center;
+}
+
+.review-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.review-subtitle {
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.stars {
+  color: #ff4d4d;
+  margin-bottom: 40px;
+}
+
+/* KHUNG CHỨA QUAN TRỌNG */
+.slider-box {
+  position: relative;
+  width: 100%;
+  max-width: 900px; /* Độ rộng tối đa của nội dung review */
+  margin: 0 auto;   /* Căn giữa slider-box so với trang */
+  height: 180px;    /* Chiều cao đủ cho nội dung */
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;    /* Căn giữa slide so với slider-box */
+  width: 90%;      /* Không để chữ sát mép màn hình */
+  opacity: 0;
+  visibility: hidden;
+  line-height: 1.8;
+  font-size: 18px;
+  animation: autoCycle 12s infinite;
+}
+
+/* Hiệu ứng trượt nhẹ và hiện hình */
+@keyframes autoCycle {
+  0% { opacity: 0; transform: translateY(10px); visibility: hidden; }
+  5%, 30% { opacity: 1; transform: translateY(0); visibility: visible; }
+  35%, 100% { opacity: 0; transform: translateY(-10px); visibility: hidden; }
+}
+
+.slide1 { animation-delay: 0s; }
+.slide2 { animation-delay: 4s; }
+.slide3 { animation-delay: 8s; }
+
+.quote {
+  color: #ff4d4d;
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+/* Mobile: Tăng chiều cao khung chứa vì chữ bị nhảy dòng */
+@media (max-width: 768px) {
+  .slider-box {
+    height: 250px;
+  }
+  .slide {
+    font-size: 16px;
+  }
+}

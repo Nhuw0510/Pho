@@ -1,0 +1,206 @@
+/* Global Colors */
+:root {
+  --background-color: #ffffff;
+  --default-color: #000000;
+  --heading-color: #000000;
+  --accent-color: #bcb5b1;
+  --contrast-color: #ffffff;
+  --logo-height: 60px; /* Kích thước logo */
+  --menu-font-size: 16px;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  background: var(--heading-color);
+  color: var(--contrast-color);
+  position: fixed;
+  z-index: 1000;
+  
+}
+
+.navbar-container {
+  background: #000;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: var(--logo-height);
+  width: auto;
+  
+}
+.navmenu {
+  margin-top: 10px;
+}
+.navmenu ul {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+}
+
+.navmenu ul li a {
+  color: var(--contrast-color);
+  font-size: var(--menu-font-size);
+  text-decoration: none;
+}
+
+.navmenu ul li a:hover {
+  color: var(--accent-color);
+}
+
+/* Mobile Menu */
+/* --- MOBILE MENU CSS --- */
+.mobile-menu-icon {
+  display: none; /* Mặc định ẩn trên Desktop */
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1100;
+}
+
+.mobile-menu-icon div {
+  width: 30px;
+  height: 3px;
+  background-color: #ffffff; /* Màu trắng cho các thanh gạch */
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 2px;
+}
+
+/* 2. Thiết kế danh sách Menu Mobile */
+.mobile-menu {
+  display: block; /* Giữ block để dùng hiệu ứng trượt */
+  list-style: none;
+  background-color: #1a1a1a; /* Màu nền tối để nổi bật chữ */
+  position: absolute;
+  top: 100%; /* Đẩy xuống ngay sát dưới header */
+  left: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  transition: all 0.4s ease-in-out;
+  transform: translateY(-150%); /* Đẩy menu lên trên để ẩn */
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* 3. Khi Menu ở trạng thái Hoạt động (Active) */
+.mobile-menu.active {
+  transform: translateY(0); /* Trượt xuống vị trí cũ */
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu li {
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu li a {
+  display: block;
+  padding: 15px 0;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.mobile-menu li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--accent-color);
+}
+
+/* 4. Hiệu ứng xoay icon thành dấu X (khi mở menu) */
+.mobile-menu-icon.change .bar1 {
+  transform: translate(0, 9px) rotate(-45deg);
+}
+.mobile-menu-icon.change .bar2 {
+  opacity: 0;
+}
+.mobile-menu-icon.change .bar3 {
+  transform: translate(0, -9px) rotate(45deg);
+}
+
+/* 5. Responsive: Chỉ hiện thị trên màn hình nhỏ (Mobile/Tablet) */
+@media (max-width: 991px) {
+  .mobile-menu-icon {
+    display: block; /* Hiện icon 3 gạch */
+  }
+
+  .navmenu {
+    display: none; /* Ẩn menu ngang của desktop */
+  }
+
+  /* Đảm bảo navbar-container không bị tràn */
+  .navbar-container {
+    padding: 10px 20px;
+    position: relative;
+  }
+}
+
+/* Footer */
+.footer {
+  color: var(--default-color);
+  background: var(--background-color);
+  font-size: 14px;
+  padding: 80px 0 0;
+  position: relative;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.footer .social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.footer .social-links a {
+  width: 42px;
+  height: 42px;
+  background-color: rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.footer .social-links a:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-3px);
+}
+
+.footer .social-links a i {
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 0;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .navmenu ul {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+}

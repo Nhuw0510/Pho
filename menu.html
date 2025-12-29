@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu</title>
+<meta name="description" content="Welcome to Pho Viet 101 - Authentic Vietnamese Cuisine, Best Pho in Fresno!">
+
+<!-- icon -->
+<link rel="icon" type="image/png" href="assets/img/logo_phoviet.png">
+<link rel="apple-touch-icon" href="assets/img/logo_phoviet.png">
+
+<!--GoogleFonts-->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/order.css" rel="stylesheet">
+  <link href="assets/css/menu.css" rel="stylesheet">
+  <script src="assets/js/menu.js" defer></script>
+
+
+
+</head>
+<body>
+    
+<header class="header fixed-top">
+  <div class="navbar-container">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo_phoviet.jpg" alt="">
+      </a>
+
+      <nav class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="ordernow.html">Order Now</a></li>
+        </ul>
+      </nav>
+      
+      <div class="mobile-menu-icon" onclick="toggleMobileMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <!-- Mobile menu (ẩn mặc định) -->
+      <ul class="mobile-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="ordernow.html">Order Now</a></li>
+      </ul>
+
+  </div>
+
+</header>
+<script>
+  function updateBodyPadding() {
+    const header = document.querySelector('.header');
+    if (header) {
+      document.body.style.paddingTop = header.offsetHeight + "px";
+    }
+  }
+
+  window.addEventListener("load", updateBodyPadding);
+
+  window.addEventListener("resize", updateBodyPadding);
+</script>
+<main id="main" class="menu-page ">
+        <div class="menu-container">
+            <ul class="menu-list">
+                <li class="menu-item active" data-category="All Dishes">All Dishes</li>
+                <li class="menu-item" data-category="Appetizers">Appetizers</li>
+                <li class="menu-item" data-category="Pho">Pho</li>
+                <li class="menu-item" data-category="Noodle Dishes">Noodle Dishes</li>
+                <li class="menu-item" data-category="Vermicelli Bowl">Vermicelli Bowl</li>
+                <li class="menu-item" data-category="Rice Dishes">Rice Dishes</li>
+                <li class="menu-item" data-category="Beverages">Beverages</li>
+            </ul>
+        </div>
+
+        <div class="menu-grid" id="dish-display">
+            </div>
+    </main>
+
+
+</body>
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+ <div class="container text-center">
+    <h4 class="sitename mb-2">Phở Việt 101 - Clovis</h4>
+    <p class="mb-1">Address: 3215 Willow Ave, Clovis, CA 93612</p>
+    <p class="mb-2">Phone: (559) 123-4567</p>
+    <div class="contact-left text-start">
+    <p class="mb-2 fw-bold">Connect with us</p>
+    <div class="social-links mt-2">
+      <a href="https://www.facebook.com/phoviet101clovis" target="_blank" class="facebook me-2">
+        <i class="bi bi-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/phoviet101_clovis?igsh=MzRlODBiNWFlZA==" target="_blank" class="instagram">
+        <i class="bi bi-instagram"></i>
+      </a>
+    </div>
+  </div>
+    <p class="mt-3 small mb-0">© 2025 Phở Việt 101 - All Rights Reserved</p>
+  </div>
+</footer>

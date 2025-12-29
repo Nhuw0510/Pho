@@ -1,0 +1,191 @@
+/* --- 1. Thanh Điều Hướng (Menu Filter) --- */
+.menu-page {
+    max-width: 1200px; 
+    margin: 0 auto; 
+     
+}
+.menu-container {
+    max-width: 1000px; /* Giữ max-width để căn giữa */
+    width: 90%;
+    background-color: transparent; 
+    border-radius: 0; 
+    padding: 0; 
+    
+    margin: 30px auto 30px auto; 
+    text-align: center;
+}
+
+.menu-list {
+    display: flex;
+    justify-content: center; /* Căn giữa các mục */
+    align-items: center;
+    list-style: none;
+    padding: 10px 0; 
+    margin: 0;
+    
+    /* ❌ Đã BỎ: border-radius, background-color, box-shadow */
+    background-color: transparent; 
+    box-shadow: none;
+    border-radius: 0;
+    
+    flex-wrap: wrap; /* Cho phép xuống dòng */
+}
+
+.menu-item {
+    cursor: pointer;
+    padding: 8px 15px; 
+    color: #444;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase; 
+    transition: all 0.3s ease;
+}
+
+/* Kiểu cho mục đang hoạt động (ACTIVE) */
+.menu-item.active {
+    background-color: transparent; 
+    color: #000; /* Màu chữ đen đậm hơn khi active */
+    border-radius: 0; 
+    font-weight: 700; /* In đậm hơn */
+    
+    /* Gạch dưới màu nâu đất (giữ lại gạch dưới để đánh dấu ACTIVE) */
+    border-bottom: 2px solid #c48e65; 
+}
+
+/* --- Media Query cho giao diện điện thoại (Responsive Vertical List) --- */
+@media (max-width: 768px) {
+    
+    .menu-container {
+        margin: 15px auto; 
+    }
+    
+    .menu-list {
+        flex-direction: column; 
+        align-items: stretch;
+        padding: 0;
+        
+        /* ❌ Đã BỎ: background-color, box-shadow */
+        background-color: transparent;
+        box-shadow: none;
+    }
+    
+    .menu-item {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0; 
+        margin: 5px 0; 
+        
+        /* ❌ Đã BỎ: background-color và border của từng item */
+        background-color: transparent;
+        border: none;
+        
+        font-size: 15px;
+        color: #444; /* Đảm bảo màu chữ bình thường */
+    }
+
+    .menu-item.active {
+        /* Vẫn giữ lại style gạch dưới để đánh dấu mục đang chọn */
+        background-color: transparent; 
+        color: #000; 
+        font-weight: 700;
+        border-bottom: 2px solid #c48e65; /* Giữ lại gạch dưới */
+    }
+}
+
+
+---
+
+/* --- 2. Bố cục Món ăn (Dish Cards) --- */
+.menu-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Bố cục Grid cho 3 cột */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; 
+    padding-bottom: 50px;
+}
+
+.dish-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+
+.dish-image-wrapper {
+    width: 100%;
+    padding-top: 120%; 
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.dish-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* Chi tiết món ăn */
+.dish-details {
+    padding-top: 15px;
+    flex-grow: 1;
+}
+
+.dish-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.dish-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    flex-basis: 70%;
+}
+
+.dish-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #888;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.dish-description {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.dish-footer {
+    padding-top: 10px;
+    border-top: 1px solid #eee; 
+}
+
+.dish-note, .dish-allergen {
+    font-size: 13px;
+    color: #777;
+    margin: 0 0 2px 0;
+}
+
+.dish-note {
+    font-style: italic;
+}
+
+.dish-allergen {
+    font-weight: 500;
+    color: #cc0000;
+}
